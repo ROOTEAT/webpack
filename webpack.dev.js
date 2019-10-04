@@ -1,0 +1,25 @@
+const path = require("path")
+module.exports={
+	mode:'development',
+	entry:{
+		main:'./src/main.js',
+		main:'./src/main2.js',
+	},
+	output:{
+		path:path.resolve(__dirname,'../dist'),
+	filename:'[name].js'
+	},
+	module:{
+		rules:[
+		{
+			test:/\.css$/,
+			use:[
+				{loader:"style-loader"},
+				{loader:"css-loader"}
+			]
+		},
+		]
+	},
+		plugins:[],
+		devServer:{}
+	}
